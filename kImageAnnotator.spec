@@ -4,7 +4,7 @@
 Summary:	Tool for annotating images
 Name:		kImageAnnotator
 Version:	0.6.0
-Release:	1
+Release:	2
 License:	LGPL 3.0
 Group:		X11/Libraries
 Source0:	https://github.com/ksnip/kImageAnnotator/archive/v%{version}/%{name}-%{version}.tar.gz
@@ -46,6 +46,7 @@ cd build
 	%{!?with_tests:-DBUILD_TESTING=OFF} \
 	-DHTML_INSTALL_DIR=%{_kdedocdir} \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
+	-DCMAKE_INSTALL_DATAROOTDIR="share" \
 	..
 %ninja_build
 
