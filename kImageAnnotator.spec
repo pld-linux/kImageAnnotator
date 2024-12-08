@@ -6,7 +6,7 @@
 Summary:	Tool for annotating images
 Name:		kImageAnnotator
 Version:	0.7.1
-Release:	1
+Release:	2
 License:	LGPL 3.0
 Group:		X11/Libraries
 Source0:	https://github.com/ksnip/kImageAnnotator/archive/v%{version}/%{name}-%{version}.tar.gz
@@ -120,6 +120,8 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with qt5}
 %files qt5 -f %{name}.lang
 %defattr(644,root,root,755)
+%dir %{_datadir}/kImageAnnotator
+%dir %{_datadir}/kImageAnnotator/translations
 %ghost %{_libdir}/libkImageAnnotator.so.0
 %attr(755,root,root) %{_libdir}/libkImageAnnotator.so.*.*
 
@@ -133,6 +135,8 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with qt6}
 %files qt6 -f %{name}.lang
 %defattr(644,root,root,755)
+%dir %{_datadir}/kImageAnnotator
+%dir %{_datadir}/kImageAnnotator/translations
 %ghost %{_libdir}/libkImageAnnotator.so.0
 %attr(755,root,root) %{_libdir}/libkImageAnnotator.so.*.*
 
